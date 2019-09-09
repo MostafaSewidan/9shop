@@ -24,8 +24,19 @@ Route::group(['middleware'=> 'language'] , function ()
         return view('9shop.layouts.app');
     });
 
+
     Route::group(['namespace'=>'shopControllers'] , function ()
     {
+
+
+        /******************************(( Home Module))************************/
+
+        Route::get('/login' , 'AuthController@index');
+        Route::post('/login' , 'AuthController@login');
+
+
+        /************************************************************************/
+
 
         /******************************(( Home Module))************************/
 
@@ -36,3 +47,6 @@ Route::group(['middleware'=> 'language'] , function ()
     });
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

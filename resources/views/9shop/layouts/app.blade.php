@@ -25,7 +25,7 @@
             position: absolute;
             left: 0;
             width: 100%;
-            background: #e4e4e4;
+            background: #002347;;
             z-index: 2;
             display: none;
         }
@@ -73,6 +73,18 @@
             font-weight: 400 !important;
             font-style: italic;
             color: #767676 !important;
+        }
+
+        .error_label
+        {
+            width: 100%;
+            font-size: 13px;
+            text-align: left;
+            color: #cc1616;
+            background-color: #dc35451a;
+            padding: 3px 1px 3px 9px;
+            font-weight: 500;
+
         }
 
 
@@ -128,11 +140,20 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="button button-header" href="#">
 
+                            @if(!auth()->guard('client')->check())
 
-                                {{__('9shop.login')}}
-                            </a>
+                                <a class="button button-header" href="{{url('/login')}}">
+                                    {{__('9shop.login')}}
+                                </a>
+
+                            @else
+
+                                <a class="button button-header" href="#">
+                                    {{auth()->guard('client')->user()->name}}
+                                </a>
+
+                            @endif
                         </li>
                     </ul>
                 </div>
@@ -293,7 +314,7 @@
 <script>
     $(document).ready(function(){
         $(".btn1").click(function(){
-            $(".search_panel").toggle();
+            $(".search_panel").slideToggle(90);
         });
     });
 </script>
