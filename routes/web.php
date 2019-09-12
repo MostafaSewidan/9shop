@@ -18,7 +18,7 @@ Route::get('/language', function () {
     return back();
 });
 
-Route::group(['middleware'=> 'language'] , function ()
+Route::group(['middleware'=> ['language' , 'confirmPinCode']] , function ()
 {
     Route::get('/', function () {
         return view('9shop.layouts.app');
@@ -28,25 +28,65 @@ Route::group(['middleware'=> 'language'] , function ()
     Route::group(['namespace'=>'shopControllers'] , function ()
     {
 
+        Route::group(['middleware'=>'loginBlock'] , function ()
+        {
 
-        /******************************(( Home Module))************************/
+        /******************************(( Auth Module))************************/
 
-        Route::get('/login' , 'AuthController@index');
-        Route::post('/login' , 'AuthController@login');
+        Route::get('client-login', 'AuthController@showLoginForm');
 
+        Route::post('client-login', 'AuthController@login');
+
+        Route::get('client-register', 'AuthController@showRegisterForm');
+
+        Route::post('client-register', 'AuthController@register');
+
+        Route::get('/Reset-password', 'AuthController@showResetPassword');
+        Route::post('/Reset-password', 'AuthController@Reset_password');
+        Route::get('/email-Reset-password', 'AuthController@showEmailResetPassword');
+        Route::post('/email-Reset-password', 'AuthController@email_Reset_password');
+
+        Route::get('/Resend-reset-pin-code', 'AuthController@Resend_reset_pin_code');
+
+        Route::get('/reset-password-form', 'AuthController@showResetPasswordForm');
+        Route::post('/reset-password-form', 'AuthController@reset_password_form');
 
         /************************************************************************/
 
+        });
 
-        /******************************(( Home Module))************************/
+        Route::group(['middleware'=>'authCheck'] , function ()
+        {
+            /******************************(( Home Module))************************/
 
-        Route::resource('/Home' , 'HomeController');
+            Route::resource('/Home' , 'HomeController');
+
+            /************************************************************************/
+
+
+
+        });
+
+        /******************************(( contacts Module))************************/
+
+        Route::resource('/contacts' , 'ContactController');
 
         /************************************************************************/
-
     });
+
+});
+
+
+Route::group(['middleware'=>'authCheck'] , function () {
+
+    /******************************(( pin code Module))************************/
+
+    Route::get('/confirm-pinCode', 'shopControllers\AuthController@showConfirmPinCode');
+    Route::post('/confirm-pinCode', 'shopControllers\AuthController@confirm_pinCode');
+    Route::get('/Resend-pin-code', 'shopControllers\AuthController@Resend_pinCode');
+
+    /************************************************************************/
 
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

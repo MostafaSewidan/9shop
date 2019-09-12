@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class authCheck
+class loginblock
 {
     /**
      * Handle an incoming request.
@@ -15,13 +15,12 @@ class authCheck
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->guard('client')->check())
+        if(!auth()->guard('client')->check())
         {
-
             return $next($request);
 
         }else{
-           return redirect('/client-login');
+            return back();
         }
     }
 }

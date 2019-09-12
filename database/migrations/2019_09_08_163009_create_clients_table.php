@@ -14,7 +14,7 @@ class CreateClientsTable extends Migration {
 			$table->string('email');
 			$table->string('phone');
 			$table->string('activation')->default('true');
-			$table->integer('pin_code');
+			$table->string('pin_code');
 			$table->string('password');
             $table->rememberToken();
 			$table->timestamps();

@@ -12,7 +12,7 @@
                         <div class="hover">
                             <h4>{{__('9shop.New_to_our_website')}}</h4>
                             <p>{{__('9shop.login_p')}}</p>
-                            <a class="button button-account" href="register.html">{{__('9shop.Create_an_account')}}</a>
+                            <a class="button button-account" href="{{url('/client-register')}}">{{__('9shop.Create_an_account')}}</a>
                         </div>
                     </div>
                 </div>
@@ -20,13 +20,13 @@
                     <div class="login_form_inner">
                         <h3>{{__('9shop.Log_in_to_enter')}}</h3>
 
-                        {!! Form::open(['url'=>'login' , 'method'=>'post' , 'class'=>'row login_form' , 'id'=>'contactForm']) !!}
+                        {!! Form::open(['url'=>'/client-login' , 'method'=>'post' , 'class'=>'row login_form' , 'id'=>'contactForm']) !!}
 
                             <div class="col-md-12 form-group">
                                 {!! Form::text('email' , old('email') ,
                                 [
                                     'class'=>'form-control' ,
-                                    'placeholder'=>__('9shop.Username')
+                                    'placeholder'=>__('9shop.email')
                                 ]) !!}
 
                                 @if($errors->has('email'))
@@ -38,14 +38,6 @@
 
                                 @endif
 
-                                @if(session()->get('email_error'))
-
-                                    <label class="error_label">
-                                        <i class="fas fa-exclamation-circle"></i>
-                                        {{ session()->get('email_error') }}
-                                    </label>
-
-                                @endif
 
                             </div>
                             <div class="col-md-12 form-group">
@@ -64,15 +56,6 @@
 
                                 @endif
 
-                                @if(session()->get('pass_error'))
-
-                                    <label class="error_label">
-                                        <i class="fas fa-exclamation-circle"></i>
-                                        {{ session()->get('pass_error') }}
-                                    </label>
-
-                                @endif
-
                             </div>
 
                             <div class="col-md-12 form-group">
@@ -83,7 +66,7 @@
                             </div>
                             <div class="col-md-12 form-group">
                                 <button type="submit" value="submit" class="button button-login w-100">{{__('9shop.Log_In')}}</button>
-                                <a href="#">{{__('9shop.Forgot_Password')}}</a>
+                                <a href="{{url('email-Reset-password')}}">{{__('9shop.Forgot_Password')}}</a>
                             </div>
 
                         {!! Form::close() !!}

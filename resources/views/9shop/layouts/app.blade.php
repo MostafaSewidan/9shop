@@ -15,10 +15,62 @@
     <link rel="stylesheet" href="{{asset('9shop/vendors/nice-select/nice-select.css')}}">
     <link rel="stylesheet" href="{{asset('9shop/vendors/owl-carousel/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('9shop/vendors/owl-carousel/owl.carousel.min.css')}}">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('9shop/css/style.css')}}">
 
     <style>
+
+        .nice-select
+        {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #fff;
+            border-radius: 0px;
+            border: none;
+            border-bottom: solid 1px #cccccc;
+            width: 100%;
+            box-sizing: border-box;
+            clear: both;
+            cursor: pointer;
+            display: block;
+            float: left;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: normal;
+            height: 38px;
+            line-height: 40px;
+            padding-left: 18px;
+            padding-right: 96%;
+            position: relative;
+            text-align: left !important;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .link
+        {
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .p_link
+        {
+            font-size: 14px;
+            color: #f00;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .link:hover
+        {
+            color: #007bff;
+        }
 
         .search_panel
         {
@@ -143,13 +195,13 @@
 
                             @if(!auth()->guard('client')->check())
 
-                                <a class="button button-header" href="{{url('/login')}}">
+                                <a class="button button-header" href="{{url('/client-login')}}">
                                     {{__('9shop.login')}}
                                 </a>
 
                             @else
 
-                                <a class="button button-header" href="#">
+                                <a class="btn2 button-header" href="#">
                                     {{auth()->guard('client')->user()->name}}
                                 </a>
 
@@ -173,6 +225,19 @@
             </div>
         </div>
     </div>
+    <div id="client_panel" style="display:none">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
+                        <form action="#">
+                            <h3>mostafa</h3>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
 
@@ -187,9 +252,10 @@
         <div class="container">
             <div class="subscribe text-center">
                 <h3 class="subscribe__title">{{__('9shop.CONTACT_US')}}</h3>
-                <p>Bearing Void gathering light light his eavening unto dont afraid</p>
+
                 <div id="mc_embed_signup">
-                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe-form form-inline mt-5 pt-1">
+                    {!! Form::open(['route' => 'contacts.store' , 'method' => 'POST' , 'class' => 'subscribe-form form-inline mt-5 pt-1']) !!}
+
                         <div class="form-group ml-sm-auto">
                             <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
                             <div class="info"></div>
@@ -199,7 +265,7 @@
                             <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
                         </div>
 
-                    </form>
+                    {!! Form::close() !!}
                 </div>
 
             </div>
@@ -314,8 +380,18 @@
 <script>
     $(document).ready(function(){
         $(".btn1").click(function(){
+
+            $("#client_panel").hide();
             $(".search_panel").slideToggle(90);
         });
+
+        $(".btn2").click(function(){
+
+            $(".search_panel").hide();
+            $("#client_panel").slideToggle(90);
+
+        });
+
     });
 </script>
 </body>

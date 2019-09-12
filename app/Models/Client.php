@@ -3,18 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Client extends Model 
+class Client extends Authenticatable
 {
 
     protected $table = 'clients';
     public $timestamps = true;
     protected $fillable = array('name', 'city_id', 'email', 'phone', 'activation', 'pin_code', 'password');
-    protected $hidden = array('password');
+    protected $hidden = array('password', 'remember_token');
 
     public function image()
     {
-        return $this->morphOne('App\Models\Image');
+        return $this->morphOne('App\Models\Image', 'imageable');
     }
 
     public function city()
@@ -36,10 +37,4 @@ class Client extends Model
     {
         return $this->hasMany('App\Models\Order');
     }
-
-    public function products()
-    {
-        return $this->belongsToMany('App\Models\Product');
-    }
-
 }
