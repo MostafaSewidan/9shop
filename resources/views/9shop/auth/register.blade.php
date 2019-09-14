@@ -9,7 +9,16 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <div class="login_box_img">
+                        <div class="hover">
+                            <h4>{{__('9shop.Already have an account?')}}</h4>
+                            <p>{{__('9shop.create_p')}}</p>
+                            <a class="button button-account" href="{{url('/client-login')}}">{{__('9shop.Login Now')}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="login_form_inner register_form_inner">
                         <h3>Create an account</h3>
                         {!! Form::open(['url'=>'/client-register' , 'method'=>'post' , 'class'=>'row login_form' , 'id'=>'register_form']) !!}

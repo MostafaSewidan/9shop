@@ -13,9 +13,10 @@ class CreateProductsTable extends Migration {
 			$table->string('price');
 			$table->text('description');
 			$table->string('offer_price')->nullable();
-			$table->string('offer_time')->nullable();
+			$table->dateTime('offer_time')->nullable();
 			$table->timestamps();
-			$table->integer('rete')->default('0');
+			$table->integer('rate')->default('0');
+			$table->integer('trend')->default('0');
 		});
 	}
 

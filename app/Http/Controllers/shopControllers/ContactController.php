@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\shopControllers;
 
+use App\Models\Client;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -35,7 +37,44 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(auth()->guard('client')->check())
+        {
+            $rules =
+                [
+                    'body'=>'required'
+                ];
+
+
+            $data = validator()->make($request->all() , $rules );
+
+            if($data->fails())
+            {
+                return redirect('/#contact')->withInput()->withErrors($data->errors());
+            }
+
+            $client = Client::find(auth()->guard('client')->user()->id);
+            $client->contacts()->create(['body' => $request->body , 'name' => $client->name , 'email' => $client->email ]);
+            return redirect('/');
+        }else{
+            $rules =
+                [
+                    'body'=>'required',
+                    'name'=>'required',
+                    'email'=>'required|email',
+                ];
+
+
+            $data = validator()->make($request->all() , $rules );
+
+            if($data->fails())
+            {
+                return redirect('/#contact')->withInput()->withErrors($data->errors());
+            }
+
+            Contact::create(['body' => $request->body , 'name' => $request->name , 'email' => $request->email ]);
+            return redirect('/');
+
+        }
     }
 
     /**

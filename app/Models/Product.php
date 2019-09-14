@@ -13,7 +13,7 @@ class Product extends Model
 
     public function image()
     {
-        return $this->morphMany('App\Models\Image');
+        return $this->morphMany('App\Models\Image' , 'imageable');
     }
 
     public function specifications()

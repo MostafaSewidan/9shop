@@ -2,25 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deac4b50-a5f0-4ae7-93bd-dd1bd1993a5b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Mail/ResetPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/9shop/auth/Password/ResetPassword.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/9shop/auth/Password/resetPasswordForm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/9shop/auth/confirmPinCode.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/emails/auth/resetPassword.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/9shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/9shop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/9shop/css/9shop_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/9shop/layouts/errorMassage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/shopControllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/shopControllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/authCheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/authCheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/card.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product-sm-9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/product8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/review-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/review-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/9shop/img/product/review-3.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en/9shop.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/9shop.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/9shop/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/9shop/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -55,74 +68,105 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/lang/en/9shop.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="458">
+              <caret line="46" column="17" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/AuthController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="404" column="56" selection-start-line="404" selection-start-column="56" selection-end-line="404" selection-end-column="56" />
+            <state>
+              <caret selection-end-column="5" />
               <folding>
                 <element signature="e#56#82#0#PHP" expanded="true" />
-                <element signature="e#400#486#0#PHP" />
-                <element signature="e#492#1822#0#PHP" />
-                <element signature="e#1828#1918#0#PHP" />
-                <element signature="e#7959#8019#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/resetPasswordForm.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="51" column="79" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ResetPassword.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="50" column="61" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+              <caret selection-end-line="1" />
+              <folding>
+                <element signature="e#56#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/9shop/layouts/errorMassage.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/9shop/home/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="133" column="65" selection-start-line="133" selection-start-column="65" selection-end-line="133" selection-end-column="65" />
+              <folding>
+                <element signature="e#3770#3790#0#HTML" expanded="true" />
+                <element signature="e#4008#4028#0#HTML" expanded="true" />
+                <element signature="e#4622#4649#0#HTML" expanded="true" />
+                <element signature="e#7656#7676#0#HTML" expanded="true" />
+                <element signature="e#7889#7909#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_products_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="351" lean-forward="true" selection-start-line="351" selection-end-line="351" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/9shop/css/9shop_style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="186" column="24" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -134,17 +178,23 @@
       <find>ti</find>
       <find>aut</find>
       <find>login</find>
+      <find>contac</find>
+      <find>if</find>
+      <find>stor</find>
+      <find>owl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/resources/views/9shop/home/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/9shop.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/9shopControllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/shopControllers/HomeController.php" />
@@ -166,20 +216,29 @@
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/confirmPinCode.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_clients_table.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Mail/ResetPassword.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/auth/resetPassword.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/9shop/auth/confirmPinCode.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/9shop/auth/Password/ResetPassword.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/9shop.php" />
         <option value="$PROJECT_DIR$/resources/views/9shop/auth/Password/resetPasswordForm.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/shopControllers/AuthController.php" />
+        <option value="/media/mostafasewidan/tasks/Temp/aroma/register.html" />
+        <option value="$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_categories_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Category.php" />
+        <option value="$PROJECT_DIR$/app/Models/Product.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_products_table.php" />
+        <option value="$PROJECT_DIR$/public/9shop/css/9shop_style.css" />
+        <option value="$PROJECT_DIR$/resources/lang/en/9shop.php" />
+        <option value="$PROJECT_DIR$/resources/views/9shop/home/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/9shop/layouts/errorMassage.blade.php" />
       </list>
     </option>
   </component>
@@ -299,6 +358,49 @@
             <path>
               <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="shopControllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="9shop" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -320,7 +422,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="9shop" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="9shop" type="b2602c69:ProjectViewProjectNode" />
@@ -328,8 +430,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="9shop" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="Password" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -341,21 +442,22 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/9shop/auth/Password" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/9shop/layouts" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/9shop/auth/Password" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/9shop/layouts" />
       <recent name="$PROJECT_DIR$/resources/views/9shop/auth/Password" />
       <recent name="$PROJECT_DIR$/resources/views/9shop/auth" />
       <recent name="$PROJECT_DIR$/resources/views/emails/auth" />
       <recent name="$PROJECT_DIR$/app/Mail" />
-      <recent name="$PROJECT_DIR$/app/Http/Middleware" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/9shop/auth/Password" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -391,19 +493,22 @@
       <workItem from="1568203931251" duration="3926000" />
       <workItem from="1568220892791" duration="20290000" />
       <workItem from="1568284722046" duration="8008000" />
+      <workItem from="1568311495283" duration="6859000" />
+      <workItem from="1568396975362" duration="16258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69623000" />
+    <option name="totallyTimeSpent" value="92740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2977273" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2977273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Command Line Tools Console" weight="0.32994923" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7969697" visible="true" weight="0.32715008" />
@@ -426,53 +531,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/9shop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/9shopControllers/HomeController.php" />
-    <entry file="file://$PROJECT_DIR$/../sofra/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/mostafasewidan/tasks/Temp/sublime/index.html" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/mostafasewidan/tasks/Temp/aroma/login.html" />
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/home/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="347" column="65" selection-start-line="347" selection-start-column="65" selection-end-line="347" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/routing/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -531,34 +589,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/ClientLoginController.php" />
-    <entry file="file://$PROJECT_DIR$/app/Models/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="e#30#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="34" />
           <folding>
             <element signature="e#23#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///media/mostafasewidan/tasks/Temp/aroma/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="95" column="2" selection-start-line="95" selection-start-column="2" selection-end-line="140" selection-end-column="63" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -628,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -656,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="66" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -670,33 +692,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="23" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/emails/auth/ResetPassword.blade">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_eamil.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/emails/auth/ResetPassword.blade" />
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_eamil.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/emails/auth/resetPassword.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -717,10 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/resetPasswordForm.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="492">
+          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -731,38 +733,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/9shop.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/ask_email.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="238">
+          <caret line="14" column="69" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/Password/resetPasswordForm.blade.php">
+    <entry file="file:///media/mostafasewidan/tasks/Temp/aroma/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+        <state relative-caret-position="207">
+          <caret line="99" column="29" lean-forward="true" selection-start-line="99" selection-start-column="29" selection-end-line="108" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/9shop/css/main.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#30#69#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="51" column="79" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="79" />
+        <state relative-caret-position="884">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_categories_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_09_08_163009_create_products_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="404" column="56" selection-start-line="404" selection-start-column="56" selection-end-line="404" selection-end-column="56" />
+        <state>
+          <caret selection-end-column="5" />
           <folding>
             <element signature="e#56#82#0#PHP" expanded="true" />
-            <element signature="e#400#486#0#PHP" />
-            <element signature="e#492#1822#0#PHP" />
-            <element signature="e#1828#1918#0#PHP" />
-            <element signature="e#7959#8019#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/9shop/css/9shop_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="186" column="24" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/shopControllers/ContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+          <folding>
+            <element signature="e#56#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/9shop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/home/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="133" column="65" selection-start-line="133" selection-start-column="65" selection-end-line="133" selection-end-column="65" />
+          <folding>
+            <element signature="e#3770#3790#0#HTML" expanded="true" />
+            <element signature="e#4008#4028#0#HTML" expanded="true" />
+            <element signature="e#4622#4649#0#HTML" expanded="true" />
+            <element signature="e#7656#7676#0#HTML" expanded="true" />
+            <element signature="e#7889#7909#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="351" lean-forward="true" selection-start-line="351" selection-end-line="351" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/9shop/layouts/errorMassage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>

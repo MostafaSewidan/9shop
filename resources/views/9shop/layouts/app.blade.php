@@ -17,131 +17,8 @@
     <link rel="stylesheet" href="{{asset('9shop/vendors/owl-carousel/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('9shop/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('9shop/css/9shop_style.css')}}">
 
-    <style>
-
-        .nice-select
-        {
-            -webkit-tap-highlight-color: transparent;
-            background-color: #fff;
-            border-radius: 0px;
-            border: none;
-            border-bottom: solid 1px #cccccc;
-            width: 100%;
-            box-sizing: border-box;
-            clear: both;
-            cursor: pointer;
-            display: block;
-            float: left;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: normal;
-            height: 38px;
-            line-height: 40px;
-            padding-left: 18px;
-            padding-right: 96%;
-            position: relative;
-            text-align: left !important;
-            -webkit-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            white-space: nowrap;
-        }
-
-        .link
-        {
-            font-size: 14px;
-            color: #777;
-            margin-top: 20px;
-            display: block;
-        }
-
-        .p_link
-        {
-            font-size: 14px;
-            color: #f00;
-            margin-top: 20px;
-            display: block;
-        }
-
-        .link:hover
-        {
-            color: #007bff;
-        }
-
-        .search_panel
-        {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            background: #002347;;
-            z-index: 2;
-            display: none;
-        }
-        .search_panel.active
-        {
-            bottom: -80px;
-        }
-        .search_panel_content
-        {
-            height: 80px;
-        }
-        .search_input
-        {
-            width: 300px;
-            height: 40px;
-            border: none;
-            outline: none;
-            border-radius: 3px;
-            padding-left: 20px;
-        }
-        .search_input::-webkit-input-placeholder
-        {
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            font-style: italic;
-            color: #767676 !important;
-        }
-        .search_input:-moz-placeholder
-        {
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            font-style: italic;
-            color: #767676 !important;
-        }
-        .search_input::-moz-placeholder
-        {
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            font-style: italic;
-            color: #767676 !important;
-        }
-        .search_input:-ms-input-placeholder
-        {
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            font-style: italic;
-            color: #767676 !important;
-        }
-
-        .error_label
-        {
-            width: 100%;
-            font-size: 13px;
-            text-align: left;
-            color: #cc1616;
-            background-color: #dc35451a;
-            padding: 3px 1px 3px 9px;
-            font-weight: 500;
-
-        }
-
-
-
-    </style>
 </head>
 <body>
 <!--================ Start Header Menu Area =================-->
@@ -243,30 +120,91 @@
 
 
 <!--================ End Header Menu Area =================-->
-
+@include('9shop.layouts.errorMassage')
    @yield('content')
 
     <!-- ================ Subscribe section start ================= -->
 <div id="contact"></div>
     <section class="subscribe-position">
         <div class="container">
-            <div class="subscribe text-center">
+            <div class="subscribe text-center" style="    padding: 85px 48px;">
                 <h3 class="subscribe__title">{{__('9shop.CONTACT_US')}}</h3>
 
-                <div id="mc_embed_signup">
-                    {!! Form::open(['route' => 'contacts.store' , 'method' => 'POST' , 'class' => 'subscribe-form form-inline mt-5 pt-1']) !!}
+                    {!! Form::open(['route' => 'contacts.store' , 'method' => 'post' , 'class' => 'row login_form']) !!}
+                            @if(!auth()->guard('client')->check())
 
-                        <div class="form-group ml-sm-auto">
-                            <input class="form-control mb-1" type="email" name="EMAIL" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address '" >
-                            <div class="info"></div>
-                        </div>
-                        <button class="button button-subscribe mr-auto mb-1" type="submit">Subscribe Now</button>
-                        <div style="position: absolute; left: -5000px;">
-                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-                        </div>
+                                <div class="col-md-12 form-group">
+                                    <center>
+                                        {!! Form::text('name' , old('name') ,
+                                            [
+                                                'class'=>'form-control' ,
+                                                'placeholder'=>__('9shop.Username')
+                                            ]) !!}
 
-                    {!! Form::close() !!}
-                </div>
+                                        @if($errors->has('name'))
+
+                                            <label class="error_label">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                                {{ $errors->first('name') }}
+                                            </label>
+
+                                        @endif
+                                    </center>
+                                </div>
+                                <br>
+                                <div class="col-md-12 form-group">
+                                    {!! Form::email('email' , old('email') ,
+                                        [
+                                            'class'=>'form-control' ,
+                                            'placeholder'=>__('9shop.email'),
+                                            'id'=>'exampleFormControlInput1'
+                                        ]) !!}
+
+                                    @if($errors->has('email'))
+
+                                        <label class="error_label">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                            {{ $errors->first('email') }}
+                                        </label>
+
+                                    @endif
+                                </div>
+                                <br>
+                                <div class="col-md-12 form-group">
+                                    <textarea name="body" id="exampleFormControlTextarea1" rows="3"
+                                              class="form-control" placeholder="{{__('9shop.Contact body ....')}}">{{old('body')}}</textarea>
+                                    @if($errors->has('body'))
+
+                                        <label class="error_label">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                            {{ $errors->first('body') }}
+                                        </label>
+
+                                    @endif
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class=" button button-login " id="contact_btn">{{__('9shop.contact')}}</button>
+                                </div>
+                            @else
+                                <div class="col-md-12 form-group">
+                                                <textarea name="body" id="exampleFormControlTextarea1" rows="3"
+                                                          class="form-control" placeholder="{{__('9shop.Contact body ....')}}">{{old('body')}}</textarea>
+                                    @if($errors->has('body'))
+
+                                        <label class="error_label">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                            {{ $errors->first('body') }}
+                                        </label>
+
+                                    @endif
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <button type="submit" value="submit" class=" button button-login " id="contact_btn">{{__('9shop.contact')}}</button>
+                                </div>
+                            @endif
+
+                {!! Form::close() !!}
+
 
             </div>
         </div>
@@ -391,6 +329,26 @@
             $("#client_panel").slideToggle(90);
 
         });
+
+    @if(session()->get('fail') || session()->get('success'))
+
+        $(".error").hide();
+        $(".error_icon").hide();
+        $(".error_p").hide();
+
+        $('body').css('overflow' , 'hidden');
+        $(".error").show(600 , function () {
+            $(".error_icon").show(680 , function () {
+                $(".error_p").fadeIn(200);
+
+                $('.error_cont').click(function () {
+                    $('body').css('overflow' , '');
+                    $(".error_cont").hide();
+                });
+            });
+        });
+
+    @endif
 
     });
 </script>

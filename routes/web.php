@@ -20,10 +20,6 @@ Route::get('/language', function () {
 
 Route::group(['middleware'=> ['language' , 'confirmPinCode']] , function ()
 {
-    Route::get('/', function () {
-        return view('9shop.layouts.app');
-    });
-
 
     Route::group(['namespace'=>'shopControllers'] , function ()
     {
@@ -57,15 +53,16 @@ Route::group(['middleware'=> ['language' , 'confirmPinCode']] , function ()
 
         Route::group(['middleware'=>'authCheck'] , function ()
         {
-            /******************************(( Home Module))************************/
-
-            Route::resource('/Home' , 'HomeController');
-
-            /************************************************************************/
-
 
 
         });
+
+        /******************************(( Home Module))************************/
+
+        Route::resource('/' , 'HomeController');
+
+        /************************************************************************/
+
 
         /******************************(( contacts Module))************************/
 

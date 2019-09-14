@@ -1,6 +1,9 @@
 @extends('9shop.layouts.app')
-
-
+<?php
+    $categories = \App\Models\Category::all();
+    $trending_products = \App\Models\Product::where('trend' , '1')->paginate(10);
+    $new_products = \App\Models\Product::where('trend' , '0')->paginate(10);
+?>
 @section('content')
 
     <main class="site-main">
@@ -30,27 +33,18 @@
         <!--================ Hero Carousel start =================-->
         <section class="section-margin mt-0">
             <div class="owl-carousel owl-theme hero-carousel">
-                <div class="hero-carousel__slide">
-                    <img src="{{asset('9shop/img/home/hero-slide1.png')}}" alt="" class="img-fluid">
-                    <a href="#" class="hero-carousel__slideOverlay">
-                        <h3>Wireless Headphone</h3>
-                        <p>Accessories Item</p>
-                    </a>
-                </div>
-                <div class="hero-carousel__slide">
-                    <img src="{{asset('9shop/img/home/hero-slide2.png')}}" alt="" class="img-fluid">
-                    <a href="#" class="hero-carousel__slideOverlay">
-                        <h3>Wireless Headphone</h3>
-                        <p>Accessories Item</p>
-                    </a>
-                </div>
-                <div class="hero-carousel__slide">
-                    <img src="{{asset('9shop/img/home/hero-slide3.png')}}" alt="" class="img-fluid">
-                    <a href="#" class="hero-carousel__slideOverlay">
-                        <h3>Wireless Headphone</h3>
-                        <p>Accessories Item</p>
-                    </a>
-                </div>
+
+                @foreach($categories as $category)
+
+                    <div class="hero-carousel__slide">
+                        <img src="{{asset('9shop/img/category/'.optional($category->image()->first())->name)}}" alt="" class="img-fluid">
+                        <a href="#" class="hero-carousel__slideOverlay">
+                            <h3>{{optional($category)->name}}</h3>
+                            <p>{{optional($category)->details}}</p>
+                        </a>
+                    </div>
+
+                @endforeach
             </div>
         </section>
         <!--================ Hero Carousel end =================-->
@@ -59,146 +53,57 @@
         <section class="section-margin calc-60px">
             <div class="container">
                 <div class="section-intro pb-60px">
-                    <p>Popular Item in the market</p>
-                    <h2>Trending <span class="section-intro__style">Product</span></h2>
+                    <p>{{__('9shop.Popular Item in the market')}}</p>
+                    <h2>{{__('9shop.Trending')}} <span class="section-intro__style">{{__('9shop.Products')}}</span></h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product1.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Accessories</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product2.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Beauty</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product3.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Decor</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                                <p class="card-product__price">$150.00</p>
+
+                    @foreach($trending_products as $trending_product)
+
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <span class="ribbon r2">
+                            <span>{{100-optional($trending_product)->offer_price/optional($trending_product)->price*100}} %</span>
+                            </span>
+                            <div class="card text-center card-product">
+                                <div class="card-product__img">
+                                    <img class="card-img" src="{{asset('9shop/img/products/'.optional($trending_product->image()->first())->name)}}" alt="">
+                                    <ul class="card-product__imgOverlay">
+                                        <li><a href="#"><button><i class="ti-shopping-cart"></i></button></a></li>
+                                        <li><a href="#"><button><i class="ti-heart"></i></button></a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+
+                                    @for($i = 0 ; optional($trending_product)->rate > $i ; $i++ )
+
+                                        <i class="fa fa-star" style="color: gold;"></i>
+
+                                    @endfor
+
+                                    @for($i = 0 ; 5 - optional($trending_product)->rate > $i ; $i++ )
+
+                                        <i class="far fa-star" style="color: gold;"></i>
+
+                                    @endfor
+
+                                        <h4 class="card-product__title"><a href="single-product.html">{{optional($trending_product)->name}}</a></h4>
+                                    <p class="card-product__price">
+                                        <span style="text-decoration: line-through;
+    text-decoration-color: red;
+    padding-right: 1pc;
+">
+                                            {{optional($trending_product)->price}} . LG
+                                        </span>
+                                        <span style="    color: #3e61f0;">
+                                            {{optional($trending_product)->offer_price}} .LG
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product4.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Decor</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product5.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Accessories</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Man Office Bag</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product6.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Kids Toy</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Charging Car</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product7.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Accessories</p>
-                                <h4 class="card-product__title"><a href="single-product.html">Blutooth Speaker</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
-                                <img class="card-img" src="{{asset('9shop/img/product/product8.png')}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><button><i class="ti-search"></i></button></li>
-                                    <li><button><i class="ti-shopping-cart"></i></button></li>
-                                    <li><button><i class="ti-heart"></i></button></li>
-                                </ul>
-                            </div>
-                            <div class="card-body">
-                                <p>Kids Toy</p>
-                                <h4 class="card-product__title"><a href="#">Charging Car</a></h4>
-                                <p class="card-product__price">$150.00</p>
-                            </div>
-                        </div>
-                    </div>
+
+                    @endforeach
+
                 </div>
             </div>
         </section>
@@ -226,137 +131,44 @@
         <section class="section-margin calc-60px">
             <div class="container">
                 <div class="section-intro pb-60px">
-                    <p>Popular Item in the market</p>
-                    <h2>Best <span class="section-intro__style">Sellers</span></h2>
+                    <p>{{__('9shop.Popular Item in the market')}}</p>
+                    <h2>{{__('9shop.New')}} <span class="section-intro__style">{{__('9shop.Products')}}</span></h2>
                 </div>
                 <div class="owl-carousel owl-theme" id="bestSellerCarousel">
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product1.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Accessories</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product2.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Beauty</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                    @foreach($new_products as $new_product)
+                        <div class="card text-center card-product">
+                            <div class="card-product__img">
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product3.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Decor</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                                <img class="img-fluid" src="{{asset('9shop/img/products/'.$new_product->image()->first()->name)}}" alt="">
+                                <ul class="card-product__imgOverlay">
+                                    <li><a href="#"><button><i class="ti-shopping-cart"></i></button></a></li>
+                                    <li><a href="#"><button><i class="ti-heart"></i></button></a></li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                @for($i = 0 ; optional($new_product)->rate > $i ; $i++ )
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product4.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Decor</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                                    <i class="fa fa-star" style="color: gold;"></i>
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product1.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Accessories</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Quartz Belt Watch</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                                @endfor
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product2.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Beauty</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Women Freshwash</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                                @for($i = 0 ; 5 - optional($new_product)->rate > $i ; $i++ )
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product3.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p>Decor</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                                    <i class="far fa-star" style="color: gold;"></i>
 
-                    <div class="card text-center card-product">
-                        <div class="card-product__img">
-                            <img class="img-fluid" src="{{asset('9shop/img/product/product4.png')}}" alt="">
-                            <ul class="card-product__imgOverlay">
-                                <li><button><i class="ti-search"></i></button></li>
-                                <li><button><i class="ti-shopping-cart"></i></button></li>
-                                <li><button><i class="ti-heart"></i></button></li>
-                            </ul>
+                                @endfor
+
+                                <h4 class="card-product__title"><a href="single-product.html">{{optional($new_product)->name}}</a></h4>
+                                <p class="card-product__price">
+                                    <span>
+                                            {{optional($new_product)->price}} . LG
+                                    </span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>Decor</p>
-                            <h4 class="card-product__title"><a href="single-product.html">Room Flash Light</a></h4>
-                            <p class="card-product__price">$150.00</p>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </section>

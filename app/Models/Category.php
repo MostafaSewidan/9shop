@@ -9,11 +9,11 @@ class Category extends Model
 
     protected $table = 'categories';
     public $timestamps = true;
-    protected $fillable = array('name');
+    protected $fillable = array('name' , 'details   ');
 
     public function image()
     {
-        return $this->morphOne('App\Models\Image');
+        return $this->morphOne('App\Models\Image' , 'imageable');
     }
 
     public function products()
