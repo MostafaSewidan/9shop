@@ -5,6 +5,7 @@ namespace App\Http\Controllers\shopControllers;
 use App\Mail\confirmEmail;
 use App\Mail\ResetPassword;
 use App\Models\Client;
+use \Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,13 @@ class AuthController extends Controller
 
         if($data->fails())
         {
-            return redirect('/client-login')->withInput()->withErrors($data->errors());
+            return response()->json([
+
+                'error' => true,
+                'errors'=> $data->errors(),
+                'code' => 400
+            ],400);
+
         }
 
         $email = Client::where('email' , $request->email)->first();
@@ -53,7 +60,14 @@ class AuthController extends Controller
         {
             if($email->activation == 'false')   // check validation block
             {
-                return back()->withInput()->withErrors(['email' => __('9shop.email_is_wrong')]);
+                $error = ['email' => __('9shop.email_is_wrong')];
+                return response()->json([
+
+                    'error' => true,
+                    'errors'=> $error,
+                    'code' => 400
+                ],400);
+
             }
         }
 
@@ -65,10 +79,22 @@ class AuthController extends Controller
 
             if($email)
             {
-                return back()->withInput()->withErrors(['password' => __('9shop.password_is_wrong')]);
+                $error = ['password' => __('9shop.password_is_wrong')];
+                return response()->json([
+
+                    'error' => true,
+                    'errors'=> $error,
+                    'code' => 400
+                ],400);
             }else
             {
-                return back()->withInput()->withErrors(['email' => __('9shop.email_is_wrong')]);
+                $error = ['email' => __('9shop.email_is_wrong')];
+                return response()->json([
+
+                    'error' => true,
+                    'errors'=> $error,
+                    'code' => 400
+                ],400);
             }
 
         }

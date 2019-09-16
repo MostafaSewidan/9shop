@@ -29,14 +29,13 @@
                                     'placeholder'=>__('9shop.email')
                                 ]) !!}
 
-                                @if($errors->has('email'))
 
-                                    <label class="error_label">
+                                    <label class="error_label" style="display: none" id="email">
                                         <i class="fas fa-exclamation-circle"></i>
-                                        {{ $errors->first('email') }}
+                                        <span></span>
                                     </label>
 
-                                @endif
+
 
 
                             </div>
@@ -47,14 +46,10 @@
                                     'placeholder'=>__('9shop.Password')
                                 ]) !!}
 
-                                @if($errors->has('password'))
-
-                                   <label class="error_label">
-                                       <i class="fas fa-exclamation-circle"></i>
-                                        {{ $errors->first('password') }}
-                                   </label>
-
-                                @endif
+                                <label class="error_label" style="display: none" id="password">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <span></span>
+                                </label>
 
                             </div>
 
@@ -65,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" class="button button-login w-100">{{__('9shop.Log_In')}}</button>
+                                <button type="button" class="button button-login w-100" id="login_button">{{__('9shop.Log_In')}}</button>
                                 <a href="{{url('email-Reset-password')}}">{{__('9shop.Forgot_Password')}}</a>
                             </div>
 
@@ -78,5 +73,51 @@
     </section>
     <!--================End Login Box Area =================-->
 
+
+@endsection
+
+@section('script')
+
+    <script>
+        $(document).ready(function() {
+
+            $('#login_button').click(function () {
+
+                var url = $('#contactForm').attr('action');
+                var form_data = $('#contactForm').serialize();
+
+                $('#email').hide();
+                $('#password').hide();
+
+                $('#email span').text('');
+                $('#password span').text('');
+                $.ajax({
+                    url: url,
+                    type: 'post',
+                    data: form_data,
+                    success:function(data){
+
+                    },
+                    error: function (data) {
+                        var error = data.responseJSON.errors;
+                        if( error.hasOwnProperty("email"))
+                        {
+
+                            $('#email span').text('').append(error['email']);
+                            $('#email').show();
+
+                        }
+                        if( error.hasOwnProperty("password"))
+                        {
+
+                            $('#password span').text('').append(error['password']);
+                            $('#password').show();
+
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 @endsection

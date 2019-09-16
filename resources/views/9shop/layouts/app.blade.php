@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aroma Shop - Home</title>
     <link rel="icon" href="{{asset('9shop/img/title_logo.jpeg')}}" type="image/png">
+
     <link rel="stylesheet" href="{{asset('9shop/vendors/bootstrap/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('9shop/vendors/fontawesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('9shop/vendors/themify-icons/themify-icons.css')}}">
@@ -18,7 +19,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('9shop/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('9shop/css/9shop_style.css')}}">
-
+    <style>
+    body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+</style>
 </head>
 <body>
 <!--================ Start Header Menu Area =================-->
@@ -43,7 +48,7 @@
 
                                 @foreach( $categories as $category)
 
-                                    <li class="nav-item"><a class="nav-link" href="category.html">{{optional($category)->name}}</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{url('/category/'.$category->id)}}">{{optional($category)->name}}</a></li>
 
                                 @endforeach
 
@@ -120,11 +125,11 @@
 
 
 <!--================ End Header Menu Area =================-->
-@include('9shop.layouts.errorMassage')
+
    @yield('content')
 
     <!-- ================ Subscribe section start ================= -->
-<div id="contact"></div>
+<div id="contact" ></div>
     <section class="subscribe-position">
         <div class="container">
             <div class="subscribe text-center" style="    padding: 85px 48px;">
@@ -314,7 +319,8 @@
 <script src="{{asset('9shop/vendors/jquery.ajaxchimp.min.js')}}"></script>
 <script src="{{asset('9shop/vendors/mail-script.js')}}"></script>
 <script src="{{asset('9shop/js/main.js')}}"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 <script>
     $(document).ready(function(){
         $(".btn1").click(function(){
@@ -330,27 +336,26 @@
 
         });
 
-    @if(session()->get('fail') || session()->get('success'))
+    @if( session()->get('success'))
 
-        $(".error").hide();
-        $(".error_icon").hide();
-        $(".error_p").hide();
+    Swal.fire(
+        'Good job!',
+        '{{session('success')}}',
+        'success'
+    );
 
-        $('body').css('overflow' , 'hidden');
-        $(".error").show(600 , function () {
-            $(".error_icon").show(680 , function () {
-                $(".error_p").fadeIn(200);
-
-                $('.error_cont').click(function () {
-                    $('body').css('overflow' , '');
-                    $(".error_cont").hide();
-                });
-            });
+    @elseif(session()->get('fail'))
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: '{{session('fail')}}'
         });
-
     @endif
 
     });
 </script>
+
+    @yield('script')
+
 </body>
 </html>

@@ -38,7 +38,7 @@
 
                     <div class="hero-carousel__slide">
                         <img src="{{asset('9shop/img/category/'.optional($category->image()->first())->name)}}" alt="" class="img-fluid">
-                        <a href="#" class="hero-carousel__slideOverlay">
+                        <a href="{{url('/category/'.$category->id)}}" class="hero-carousel__slideOverlay">
                             <h3>{{optional($category)->name}}</h3>
                             <p>{{optional($category)->details}}</p>
                         </a>
@@ -127,49 +127,50 @@
         </section>
         <!-- ================ offer section end ================= -->
 
+
+
         <!-- ================ Best Selling item  carousel ================= -->
         <section class="section-margin calc-60px">
             <div class="container">
                 <div class="section-intro pb-60px">
-                    <p>{{__('9shop.Popular Item in the market')}}</p>
+                    <p>{{__('9shop.Popular Item in the market')}}   </p>
                     <h2>{{__('9shop.New')}} <span class="section-intro__style">{{__('9shop.Products')}}</span></h2>
                 </div>
                 <div class="owl-carousel owl-theme" id="bestSellerCarousel">
 
-                    @foreach($new_products as $new_product)
-                        <div class="card text-center card-product">
-                            <div class="card-product__img">
+                        @foreach($new_products as $new_product)
+                            <div class="card text-center card-product">
+                                <div class="card-product__img">
 
-                                <img class="img-fluid" src="{{asset('9shop/img/products/'.$new_product->image()->first()->name)}}" alt="">
-                                <ul class="card-product__imgOverlay">
-                                    <li><a href="#"><button><i class="ti-shopping-cart"></i></button></a></li>
-                                    <li><a href="#"><button><i class="ti-heart"></i></button></a></li>
-                                </ul>
+                                    <img class="img-fluid" src="{{asset('9shop/img/products/'.$new_product->image()->first()->name)}}" alt="">
+                                    <ul class="card-product__imgOverlay">
+                                        <li><a href="#"><button><i class="ti-shopping-cart"></i></button></a></li>
+                                        <li><a href="#"><button><i class="ti-heart"></i></button></a></li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    @for($i = 0 ; optional($new_product)->rate > $i ; $i++ )
+
+                                        <i class="fa fa-star" style="color: gold;"></i>
+
+                                    @endfor
+
+                                    @for($i = 0 ; 5 - optional($new_product)->rate > $i ; $i++ )
+
+                                        <i class="far fa-star" style="color: gold;"></i>
+
+                                    @endfor
+
+                                    <h4 class="card-product__title"><a href="single-product.html">{{optional($new_product)->name}}</a></h4>
+                                    <p class="card-product__price">
+                                        <span>
+                                                {{optional($new_product)->price}} . LG
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                @for($i = 0 ; optional($new_product)->rate > $i ; $i++ )
-
-                                    <i class="fa fa-star" style="color: gold;"></i>
-
-                                @endfor
-
-                                @for($i = 0 ; 5 - optional($new_product)->rate > $i ; $i++ )
-
-                                    <i class="far fa-star" style="color: gold;"></i>
-
-                                @endfor
-
-                                <h4 class="card-product__title"><a href="single-product.html">{{optional($new_product)->name}}</a></h4>
-                                <p class="card-product__price">
-                                    <span>
-                                            {{optional($new_product)->price}} . LG
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
+                        @endforeach
+                    </div>
             </div>
         </section>
         <!-- ================ Best Selling item  carousel end ================= -->

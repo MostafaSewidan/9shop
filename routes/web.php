@@ -69,6 +69,18 @@ Route::group(['middleware'=> ['language' , 'confirmPinCode']] , function ()
         Route::resource('/contacts' , 'ContactController');
 
         /************************************************************************/
+
+        /******************************(( Categories Module))************************/
+
+        Route::resource('/category' , 'CategoryController');
+
+        /************************************************************************/
+
+        /******************************(( Products Module))************************/
+
+        Route::resource('/product' , 'ProductController');
+
+        /************************************************************************/
     });
 
 });
