@@ -4,6 +4,7 @@ return
         'CONTACT_US' => 'CONTACT US',
         'home' => 'Home',
         'categories' => 'Categories',
+        'category' => 'Category',
         'Customer_Service' => 'Customer Service',
         'my_orders' => 'My Orders',
         'about_us' => 'About Us',

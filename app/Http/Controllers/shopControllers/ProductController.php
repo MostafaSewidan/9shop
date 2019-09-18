@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\shopControllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('9shop.product.index');
+
+        return abort(404);
     }
 
     /**
@@ -35,7 +37,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+
     }
 
     /**
@@ -46,7 +48,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        $product_specifications = $product->specifications()->get();
+        return view('9shop.product.index' , compact('product' , 'product_specifications'));
     }
 
     /**

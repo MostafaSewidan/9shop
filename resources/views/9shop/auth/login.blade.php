@@ -97,6 +97,11 @@
                     data: form_data,
                     success:function(data){
 
+                        if (data.redirect) {
+                            // data.redirect contains the string URL to redirect to
+                            window.location.href = data.redirect;
+                        }
+
                     },
                     error: function (data) {
                         var error = data.responseJSON.errors;

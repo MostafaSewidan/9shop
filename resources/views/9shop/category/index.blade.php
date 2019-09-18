@@ -101,16 +101,16 @@
 
                                                 @endfor
 
-                                                <h4 class="card-product__title"><a href="single-product.html">{{optional($product)->name}}</a></h4>
+                                                <h4 class="card-product__title"><a href="{{url('/product/'.optional($product)->id)}}">{{optional($product)->name}}</a></h4>
                                                 <p class="card-product__price">
                                         <span style="text-decoration: line-through;
     text-decoration-color: red;
     padding-right: 1pc;
 ">
-                                            {{optional($product)->price}} . LG
+                                            {{optional($product)->price}} EGP
                                         </span>
                                                     <span style="    color: #3e61f0;">
-                                            {{optional($product)->offer_price}} .LG
+                                            {{optional($product)->offer_price}} EGP
                                         </span>
                                                 </p>
                                             </div>
@@ -129,9 +129,20 @@
                                                 </ul>
                                             </div>
                                             <div class="card-body">
-                                                <p>Accessories</p>
-                                                <h4 class="card-product__title"><a href="#">Quartz Belt Watch</a></h4>
-                                                <p class="card-product__price">$150.00</p>
+                                                @for($i = 0 ; optional($product)->rate > $i ; $i++ )
+
+                                                    <i class="fa fa-star" style="color: gold;"></i>
+
+                                                @endfor
+
+                                                @for($i = 0 ; 5 - optional($product)->rate > $i ; $i++ )
+
+                                                    <i class="far fa-star" style="color: gold;"></i>
+
+                                                @endfor
+                                                <h4 class="card-product__title">
+                                                    <a href="{{url('/product/'.optional($product)->id)}}">{{optional($product)->name}}</a></h4>
+                                                <p class="card-product__price">{{optional($product)->price}} EGP</p>
                                             </div>
                                         </div>
                                     </div>
@@ -186,10 +197,10 @@
 
                             @endfor
 
-                            <h4 class="card-product__title"><a href="single-product.html">{{optional($new_product)->name}}</a></h4>
+                            <h4 class="card-product__title"><a href="{{url('/product/'.optional($new_product)->id)}}">{{optional($new_product)->name}}</a></h4>
                             <p class="card-product__price">
                                         <span>
-                                                {{optional($new_product)->price}} . LG
+                                                {{optional($new_product)->price}} EGP
                                         </span>
                             </p>
                         </div>
@@ -221,16 +232,16 @@
 
                                 @endfor
 
-                                <h4 class="card-product__title"><a href="single-product.html">{{optional($new_product)->name}}</a></h4>
+                                <h4 class="card-product__title"><a href="{{url('/product/'.optional($new_product)->id)}}">{{optional($new_product)->name}}</a></h4>
                                 <p class="card-product__price" style="font-size: 15px;">
                                        <span style="text-decoration: line-through;
     text-decoration-color: red;
     padding-right: 7px;
 ">
-                                            {{optional($new_product)->price}} . LG
+                                            {{optional($new_product)->price}} EGP
                                         </span>
                                     <span style="    color: #3e61f0;">
-                                            {{optional($new_product)->offer_price}} .LG
+                                            {{optional($new_product)->offer_price}} EGP
                                         </span>
                                 </p>
                             </div>

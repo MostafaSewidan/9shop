@@ -73,7 +73,11 @@ class AuthController extends Controller
 
         if(auth()->guard('client')->attempt(['email' => $request->email , 'password' => $request->password]))
         {
-            return redirect('/');
+           return response()->json([
+
+            'success' => true,
+            'redirect' => url('/'),
+        ]);
         }else{
 
 

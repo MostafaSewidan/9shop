@@ -83,7 +83,7 @@
 
                             @else
 
-                                <a class="btn2 button-header" href="#">
+                                <a class="button button-header" id="btn2" href="#">
                                     {{auth()->guard('client')->user()->name}}
                                 </a>
 
@@ -329,7 +329,7 @@
             $(".search_panel").slideToggle(90);
         });
 
-        $(".btn2").click(function(){
+        $("#btn2").click(function(){
 
             $(".search_panel").hide();
             $("#client_panel").slideToggle(90);
